@@ -25,8 +25,8 @@ if (process.env.NODE_ENV === 'development') {
 }
 
 // Routes
-app.use('/api/users', require('./routes/user.routes'))
-app.use('/api/blogs', require('./routes/blog.routes'))
+app.use('/users', require('./routes/user.routes'))
+app.use('/blogs', require('./routes/blog.routes'))
 
 // Home route
 app.get('/', (req, res) => {

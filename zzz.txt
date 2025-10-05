@@ -1,0 +1,10 @@
+{
+  "message": "User registered successfully",
+  "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4ZTI2YzM0NWMyZGY0MDJmMjYwZGUzZSIsImVtYWlsIjoibWFyZW9sYUBleGFtcGxlLmNvbSIsImlhdCI6MTc1OTY2OTMwMSwiZXhwIjoxNzU5NjcyOTAxfQ.4kYr5hJcdKzTS0ML6q0QzLXCSstmgUXxp2NwARq3nhU",
+  "user": {
+    "id": "68e26c345c2df402f260de3e",
+    "email": "mareola@example.com",
+    "first_name": "Mareola",
+    "last_name": "Plate"
+  }
+}
