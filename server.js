@@ -25,12 +25,12 @@ if (process.env.NODE_ENV === 'development') {
 }
 
 // Routes
-app.use('/users', require('./routes/user.routes'))
-app.use('/blogs', require('./routes/blog.routes'))
+app.use('/api/users', require('./routes/user.routes'))
+app.use('/api/blogs', require('./routes/blog.routes'))
 
 // Home route
 app.get('/', (req, res) => {
-  res.send('Welcome to the Blogging API 🚀')
+  res.send(`Welcome to the Ibukunola's Blogging API`)
 })
 
 // 404 Handler
