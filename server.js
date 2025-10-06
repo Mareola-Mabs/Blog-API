@@ -30,7 +30,7 @@ app.use('/blogs', require('./routes/blog.routes'))
 
 // Home route
 app.get('/', (req, res) => {
-  res.send(`Welcome to the Ibukunola's Blogging API`)
+  res.send(`Welcome to the Ibukunola's Blogging API. Kindly test this API with a REST client (POSTMAN or ThunderClient)`)
 })
 
 // 404 Handler
