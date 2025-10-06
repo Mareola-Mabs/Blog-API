@@ -179,7 +179,7 @@ Supports:
 - Searching → author, title, tags  
 - Ordering → read_count, reading_time, timestamp  
 
-### 2️⃣ Get a Single Blog (Public)
+### 2️⃣ Get a Single Blog (Public) (Blog must have been published using the PATCH/:id/state route)
 **GET** `/blogs/:id`
 
 Automatically:
@@ -198,7 +198,7 @@ Automatically:
   "read_count": 45,
   "reading_time": "3 mins",
   "state": "published",
-  "tags": ["nodejs", "backend"],
+  "tags": "nodejs", "backend",
   "body": "Full blog content..."
 }
 ```
@@ -216,7 +216,7 @@ Authorization: Bearer <token>
 {
   "title": "My First Blog",
   "description": "Introduction to blogging",
-  "tags": ["intro", "blog"],
+  "tags": "intro", "blog",
   "body": "This is my first blog post."
 }
 ```
