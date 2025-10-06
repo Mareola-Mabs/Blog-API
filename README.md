@@ -127,7 +127,7 @@ Tokens expire after 1 hour.
 ## 🧍 User Endpoints
 
 ### 1️⃣ Register a User
-**POST** `/api/users/signup`
+**POST** `/users/signup`
 
 **Request Body:**
 ```json
@@ -148,7 +148,7 @@ Tokens expire after 1 hour.
 ```
 
 ### 2️⃣ Login User
-**POST** `/api/users/login`
+**POST** `/users/login`
 
 **Request Body:**
 ```json
@@ -171,7 +171,7 @@ Tokens expire after 1 hour.
 ## 📰 Blog Endpoints
 
 ### 1️⃣ Get All Published Blogs (Public)
-**GET** `/api/blogs?state=published&page=1&limit=20&author=mike&order_by=read_count`
+**GET** `/blogs?state=published&page=1&limit=20&author=mike&order_by=read_count`
 
 Supports:
 - Pagination → page, limit  
@@ -180,7 +180,7 @@ Supports:
 - Ordering → read_count, reading_time, timestamp  
 
 ### 2️⃣ Get a Single Blog (Public)
-**GET** `/api/blogs/:id`
+**GET** `/blogs/:id`
 
 Automatically:
 - Increments read_count by 1  
@@ -204,7 +204,7 @@ Automatically:
 ```
 
 ### 3️⃣ Create a Blog (Authenticated)
-**POST** `/api/blogs`
+**POST** `/blogs`
 
 **Header:**
 ```
@@ -224,7 +224,7 @@ Authorization: Bearer <token>
 Created blogs start as draft.
 
 ### 4️⃣ Publish a Blog (Authenticated)
-**PATCH** `/api/blogs/:id/state`
+**PATCH** `/blogs/:id/state`
 
 **Body:**
 ```json
@@ -234,7 +234,7 @@ Created blogs start as draft.
 ```
 
 ### 5️⃣ Edit a Blog (Authenticated, Owner Only)
-**PUT** `/api/blogs/:id`
+**PUT** `/blogs/:id`
 
 **Body:**
 ```json
@@ -245,12 +245,12 @@ Created blogs start as draft.
 ```
 
 ### 6️⃣ Delete a Blog (Authenticated, Owner Only)
-**DELETE** `/api/blogs/:id`
+**DELETE** `/blogs/:id`
 
 Deletes the blog completely from the database.
 
 ### 7️⃣ Get All Blogs by Logged-in User
-**GET** `/api/blogs/my-blogs?state=draft&page=1`
+**GET** `/blogs/my-blogs?state=draft&page=1`
 
 Lists blogs created by the logged-in user.
 

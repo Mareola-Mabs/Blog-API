@@ -20,14 +20,12 @@ router.post('/signup', async (req, res) => {
     if (existingUser) {
       return res.status(400).json({ message: 'Email already registered' })
     }
-
-    const hashedPassword = await bcrypt.hash(password, 10)
-
+    
     const newUser = new User({
       first_name,
       last_name,
       email,
-      password: hashedPassword,
+      password,
     })
 
     await newUser.save()
