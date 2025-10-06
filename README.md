@@ -36,8 +36,8 @@ This API supports **JWT-based authentication**, **pagination**, **searching**, *
 
 ### 1️⃣ Clone the Repository
 ```bash
-https://github.com/Mareola-Mabs/Blog-API
-cd Blog-API
+git clone https://github.com/<your-username>/blogging-api.git
+cd blogging-api
 ```
 
 ### 2️⃣ Install Dependencies
@@ -127,7 +127,7 @@ Tokens expire after 1 hour.
 ## 🧍 User Endpoints
 
 ### 1️⃣ Register a User
-**POST** `/users/signup`
+**POST** `/api/users/signup`
 
 **Request Body:**
 ```json
@@ -148,7 +148,7 @@ Tokens expire after 1 hour.
 ```
 
 ### 2️⃣ Login User
-**POST** `/users/login`
+**POST** `/api/users/login`
 
 **Request Body:**
 ```json
@@ -171,7 +171,7 @@ Tokens expire after 1 hour.
 ## 📰 Blog Endpoints
 
 ### 1️⃣ Get All Published Blogs (Public)
-**GET** `/blogs?state=published&page=1&limit=20&author=mike&order_by=read_count`
+**GET** `/api/blogs?state=published&page=1&limit=20&author=mike&order_by=read_count`
 
 Supports:
 - Pagination → page, limit  
@@ -180,7 +180,7 @@ Supports:
 - Ordering → read_count, reading_time, timestamp  
 
 ### 2️⃣ Get a Single Blog (Public)
-**GET** `/blogs/:id`
+**GET** `/api/blogs/:id`
 
 Automatically:
 - Increments read_count by 1  
@@ -204,7 +204,7 @@ Automatically:
 ```
 
 ### 3️⃣ Create a Blog (Authenticated)
-**POST** `/blogs`
+**POST** `/api/blogs`
 
 **Header:**
 ```
@@ -224,7 +224,7 @@ Authorization: Bearer <token>
 Created blogs start as draft.
 
 ### 4️⃣ Publish a Blog (Authenticated)
-**PATCH** `/blogs/:id/state`
+**PATCH** `/api/blogs/:id/state`
 
 **Body:**
 ```json
@@ -234,7 +234,7 @@ Created blogs start as draft.
 ```
 
 ### 5️⃣ Edit a Blog (Authenticated, Owner Only)
-**PUT** `/blogs/:id`
+**PUT** `/api/blogs/:id`
 
 **Body:**
 ```json
@@ -245,12 +245,12 @@ Created blogs start as draft.
 ```
 
 ### 6️⃣ Delete a Blog (Authenticated, Owner Only)
-**DELETE** `/blogs/:id`
+**DELETE** `/api/blogs/:id`
 
 Deletes the blog completely from the database.
 
 ### 7️⃣ Get All Blogs by Logged-in User
-**GET** `/blogs/my-blogs?state=draft&page=1`
+**GET** `/api/blogs/my-blogs?state=draft&page=1`
 
 Lists blogs created by the logged-in user.
 
